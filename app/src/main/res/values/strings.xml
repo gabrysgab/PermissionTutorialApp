@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PermissionTutorialApp</string>
+    <string name="login_button">Log-in</string>
+    <string name="dialog_message">dialog message</string>
+    <string name="dialog_title">dialog title</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TutorialUprawnien</string>
+    <string name="login_button">Zaloguj</string>
+    <string name="dialog_message">Potrzebujemy twoich kontaktow, czy wyświetlić ekran udzielania uprawnień?</string>
+    <string name="dialog_title">DAWAJ KONTAKTY!</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+</resources>

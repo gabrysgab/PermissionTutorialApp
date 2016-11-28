@@ -1,9 +1,13 @@
 package com.mgabrynowicz.permissiontutorialapp;
 
 import android.Manifest;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -12,12 +16,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
     private Button loginButton;
     private TextView messageText;
     public static final int READ_WRITE_CONTACTS_REQUEST = 0;
+    private BroadcastReceiver internetConnectionStatusReceiver;
+    private IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = (Button) findViewById(R.id.loginButton);
         messageText = (TextView) findViewById(R.id.messageText);
         loginButton.setEnabled(false);
+
 
 
         if (dontHavePermission(Manifest.permission.READ_CONTACTS) || dontHavePermission(Manifest.permission.WRITE_CONTACTS)) {
@@ -40,14 +49,33 @@ public class LoginActivity extends AppCompatActivity {
             messageText.setVisibility(View.INVISIBLE);
         }
 
+        internetConnectionStatusReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Boolean noConnection = intent.getBooleanExtra(ConnectivityManager.EXTRA_NO_CONNECTIVITY, false);
+
+                if (noConnection) {
+                    loginButton.setEnabled(false);
+                    Toast.makeText(context, "Internet is discconnected", Toast.LENGTH_SHORT).show();
+                } else {
+                    loginButton.setEnabled(true);
+                    Toast.makeText(context, "Internet is connected", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+
+        registerReceiver(internetConnectionStatusReceiver, intentFilter);
+
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent startMainActivityIntent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(startMainActivityIntent);
-
             }
-        });
+        }
+
+        );
     }
 
     private boolean dontHavePermission(String permission) {

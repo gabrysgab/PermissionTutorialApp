@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.mgabrynowicz.permissiontutorialapp.RegisterForm">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/userNameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/userNameText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/userName" />
+
+            <EditText
+                android:id="@+id/userNameEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/userNameHint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/userSurnameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/userSurnameText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/userSurname" />
+
+            <EditText
+                android:id="@+id/userSurnameEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/userSurnameHint" />
+        </LinearLayout>
+
+        <View android:background="#f10202"
+            android:layout_width = "match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:id="@+id/userAddressLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/streetNameText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/streetName" />
+
+            <EditText
+                android:id="@+id/streetNameEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/streetNameHint" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/streetNumberText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/streetNumber" />
+
+            <EditText
+                android:id="@+id/streetNumberEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/streetNumberHint" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/postCodeNameText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/postCode" />
+
+            <EditText
+                android:id="@+id/postCodeEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/postCodeHint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cityNameText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cityName" />
+
+            <EditText
+                android:id="@+id/cityNameEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/cityNameHint" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/countryNameText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/countryName" />
+
+            <EditText
+                android:id="@+id/countryEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/countryNameHint" />
+
+
+        </LinearLayout>
+
+        <View android:background="#f10202"
+            android:layout_width = "match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/emailText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/email" />
+
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/emailHint" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/phoneNumberText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/phoneNumber" />
+
+            <EditText
+                android:id="@+id/phoneNumberEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/phoneNumberHint" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

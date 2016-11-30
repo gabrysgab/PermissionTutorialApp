@@ -28,4 +28,5 @@
     <string name="confirmPasswordText">Password</string>
     <string name="confirmPasswordHint">Re-enter password</string>
     <string name="registerToNewsletterCheckbox">Register to newsletter</string>
+    <string name="registerButtonText">Register</string>
 </resources>

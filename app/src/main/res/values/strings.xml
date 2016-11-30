@@ -23,4 +23,9 @@
     <string name="emailHint">Your Email</string>
     <string name="phoneNumber">Phone Number</string>
     <string name="phoneNumberHint">Your number</string>
+    <string name="passwordText">Password</string>
+    <string name="passwordHint">Enter password</string>
+    <string name="confirmPasswordText">Password</string>
+    <string name="confirmPasswordHint">Re-enter password</string>
+    <string name="registerToNewsletterCheckbox">Register to newsletter</string>
 </resources>

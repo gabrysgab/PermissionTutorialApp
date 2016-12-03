@@ -27,6 +27,6 @@
     <string name="passwordHint">Enter password</string>
     <string name="confirmPasswordText">Password</string>
     <string name="confirmPasswordHint">Re-enter password</string>
-    <string name="registerToNewsletterCheckbox">Register to newsletter</string>
+    <string name="registerToNewsletterCheckbox">Sign-up to newsletter</string>
     <string name="registerButtonText">Register</string>
 </resources>

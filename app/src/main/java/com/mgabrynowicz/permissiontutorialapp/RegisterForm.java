@@ -33,6 +33,7 @@ public class RegisterForm extends AppCompatActivity {
     final List<EditText> formFields = new ArrayList<EditText>();
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,16 +56,16 @@ public class RegisterForm extends AppCompatActivity {
         Locale[] locale = Locale.getAvailableLocales();
         ArrayList<String> countries = new ArrayList<String>();
         String country;
-        for( Locale loc : locale ){
+        for (Locale loc : locale) {
             country = loc.getDisplayCountry();
-            if( country.length() > 0 && !countries.contains(country) ){
-                countries.add( country );
+            if (country.length() > 0 && !countries.contains(country)) {
+                countries.add(country);
             }
         }
         Collections.sort(countries, String.CASE_INSENSITIVE_ORDER);
 
         Spinner spinner = (Spinner) findViewById(R.id.countries_spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, countries);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, countries);
         spinner.setAdapter(adapter);
 
 
@@ -86,15 +87,10 @@ public class RegisterForm extends AppCompatActivity {
                 } else {
                     Toast.makeText(RegisterForm.this, "Fill the forms!", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
-
-        }
-        );
-
-
+        });
     }
+
 
 
     public boolean checkIfFormsAreFilled() {
@@ -110,7 +106,6 @@ public class RegisterForm extends AppCompatActivity {
     }
 
 
-
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
@@ -120,6 +115,9 @@ public class RegisterForm extends AppCompatActivity {
         }
 
     }
+
+
+
 }
 
 

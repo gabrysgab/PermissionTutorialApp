@@ -7,5 +7,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="fontSizeRegisterFormStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_gravity">center</item>
+
+
+    </style>
 
 </resources>

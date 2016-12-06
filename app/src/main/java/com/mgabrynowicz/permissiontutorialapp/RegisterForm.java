@@ -1,13 +1,17 @@
 package com.mgabrynowicz.permissiontutorialapp;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -33,11 +37,13 @@ public class RegisterForm extends AppCompatActivity {
     final List<EditText> formFields = new ArrayList<EditText>();
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_form);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
 
         userNameEditText = (EditText) findViewById(R.id.userNameEditText);
         userSurnameEditText = (EditText) findViewById(R.id.userSurnameEditText);
@@ -51,6 +57,7 @@ public class RegisterForm extends AppCompatActivity {
         passwordEditText = (EditText) findViewById(R.id.passwordEditText);
         confirmPasswordEditText = (EditText) findViewById(R.id.confirmPasswordEditText);
         registerButton = (Button) findViewById(R.id.registerButton);
+
 
 
         Locale[] locale = Locale.getAvailableLocales();
@@ -81,16 +88,22 @@ public class RegisterForm extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 if (checkIfFormsAreFilled()) {
 
                     Toast.makeText(RegisterForm.this, "Yay forms are filled!", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(RegisterForm.this, "Fill the forms!", Toast.LENGTH_SHORT).show();
+                    Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_register_form), "Please fill all forms", Snackbar.LENGTH_LONG);
+                    View snackbarView = snackbar.getView();
+                    TextView txtv = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+                    txtv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                    snackbarView.setBackgroundColor(ContextCompat.getColor(RegisterForm.this, R.color.primary));
+                    snackbar.show();
+
                 }
             }
         });
     }
-
 
 
     public boolean checkIfFormsAreFilled() {
@@ -115,7 +128,6 @@ public class RegisterForm extends AppCompatActivity {
         }
 
     }
-
 
 
 }

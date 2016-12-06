@@ -29,4 +29,9 @@
     <string name="confirmPasswordHint">Re-enter password</string>
     <string name="registerToNewsletterCheckbox">Sign-up to newsletter</string>
     <string name="registerButtonText">Register</string>
+    <string name="personal_information">Personal information</string>
+    <string name="address_information">Address information</string>
+    <string name="contact_information">Contact information</string>
+    <string name="password_setting">Set a password</string>
+    <string name="registerFormName">Sign-up</string>
 </resources>

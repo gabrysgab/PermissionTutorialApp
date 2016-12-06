@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/fontSizeRegisterFormStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top"
+    android:divider="@drawable/empty_divider"
+    android:orientation="vertical"
+    android:showDividers="middle">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_register_form"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,309 +29,410 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.mgabrynowicz.permissiontutorialapp.RegisterForm"
-    >
+    tools:context="com.mgabrynowicz.permissiontutorialapp.RegisterForm">
+
 
     <LinearLayout
+        style="@style/fontSizeRegisterFormStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@drawable/empty_divider"
         android:layout_gravity="top"
+        android:divider="@drawable/empty_divider"
         android:orientation="vertical"
-        android:showDividers="middle"
-        style="@style/fontSizeRegisterFormStyle">
+        android:showDividers="middle">
 
 
-        <LinearLayout
-            android:id="@+id/userNameLayout"
+
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_name_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            card_view:cardCornerRadius="4dp">
 
-            <TextView
-                android:id="@+id/userNameText"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/userName"
-                style="@style/fontSizeRegisterFormStyle"/>
-
-            <EditText
-                android:id="@+id/userNameEditText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edittext_form_style"
-                android:gravity="center"
-                android:hint="@string/userNameHint"
+                android:divider="@drawable/empty_divider"
+                android:orientation="vertical"
+                android:showDividers="middle"
+                android:padding="20dp"
+                >
 
-                style="@style/fontSizeRegisterFormStyle"/>
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/personal_information"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/card_headline_font_size"/>
 
-        <LinearLayout
-            android:id="@+id/userSurnameLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/userSurnameText"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/userSurname"
-                style="@style/fontSizeRegisterFormStyle"/>
+                <LinearLayout
+                    android:id="@+id/userNameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/userSurnameEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_form_style"
-                android:gravity="center"
-                android:hint="@string/userSurnameHint"
-                style="@style/fontSizeRegisterFormStyle"/>
-            />
-        </LinearLayout>
+                    <TextView
+                        android:id="@+id/userNameText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/userName" />
+
+                    <EditText
+                        android:id="@+id/userNameEditText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_form_style"
+                        android:gravity="center"
+
+                        android:hint="@string/userNameHint" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/userSurnameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/userSurnameText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="@dimen/register_form_textview_default_width"
+                        android:layout_height="wrap_content"
+                        android:text="@string/userSurname" />
+
+                    <EditText
+                        android:id="@+id/userSurnameEditText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_form_style"
+                        android:gravity="center"
+                        android:hint="@string/userSurnameHint" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#f10202" />
+            android:background="@color/divider" />
 
-        <LinearLayout
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_address_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            card_view:cardCornerRadius="4dp">
 
-            <TextView
-                android:id="@+id/cityNameText"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/cityName"
-                style="@style/fontSizeRegisterFormStyle"/>
-
-            <EditText
-                android:id="@+id/cityNameEditText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edittext_form_style"
-                android:gravity="center"
-                android:hint="@string/cityNameHint"
-                style="@style/fontSizeRegisterFormStyle"/>
+                android:divider="@drawable/empty_divider"
+                android:orientation="vertical"
+                android:showDividers="middle"
+                android:padding="20dp">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/address_information"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/card_headline_font_size"/>
 
-        <LinearLayout
-            android:id="@+id/userAddressLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/streetNameText"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/streetName"
-                style="@style/fontSizeRegisterFormStyle"/>
+                    <TextView
+                        android:id="@+id/cityNameText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="@dimen/register_form_textview_default_width"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cityName" />
 
-            <EditText
-                android:id="@+id/streetNameEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_form_style"
-                android:gravity="center"
-                android:hint="@string/streetNameHint"
-                style="@style/fontSizeRegisterFormStyle"/>
+                    <EditText
+                        android:id="@+id/cityNameEditText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_form_style"
+                        android:gravity="center"
+                        android:hint="@string/cityNameHint" />
 
-        </LinearLayout>
+                </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/userAddressLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/streetNameText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="@dimen/register_form_textview_default_width"
+                        android:layout_height="wrap_content"
+                        android:text="@string/streetName" />
 
-            <TextView
-                android:id="@+id/streetNumberText"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/streetNumber"
-                style="@style/fontSizeRegisterFormStyle"/>
+                    <EditText
+                        android:id="@+id/streetNameEditText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_form_style"
+                        android:gravity="center"
+                        android:hint="@string/streetNameHint" />
 
-            <EditText
-                android:id="@+id/streetNumberEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_form_style"
-                android:gravity="center"
-                android:hint="@string/streetNumberHint"
-                style="@style/fontSizeRegisterFormStyle"/>
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/postCodeNameText"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/postCode"
-                style="@style/fontSizeRegisterFormStyle"/>
-
-            <EditText
-                android:id="@+id/postCodeEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_form_style"
-                android:gravity="center"
-                android:hint="@string/postCodeHint"
-                style="@style/fontSizeRegisterFormStyle"/>
-        </LinearLayout>
+                </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/countryNameText"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/countryName"
-                style="@style/fontSizeRegisterFormStyle"/>
+                    <TextView
+                        android:id="@+id/streetNumberText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="@dimen/register_form_textview_default_width"
+                        android:layout_height="wrap_content"
+                        android:text="@string/streetNumber" />
 
-            <Spinner
-                android:id="@+id/countries_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-
-            </Spinner>
-
-            <!--<EditText-->
-                <!--android:id="@+id/countryEditText"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:background="@drawable/edittext_form_style"-->
-                <!--android:gravity="center"-->
-                <!--android:hint="@string/countryNameHint" />-->
+                    <EditText
+                        android:id="@+id/streetNumberEditText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_form_style"
+                        android:gravity="center"
+                        android:hint="@string/streetNumberHint" />
 
 
-        </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/postCodeNameText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="@dimen/register_form_textview_default_width"
+                        android:layout_height="wrap_content"
+                        android:text="@string/postCode" />
+
+                    <EditText
+                        android:id="@+id/postCodeEditText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_form_style"
+                        android:gravity="center"
+                        android:hint="@string/postCodeHint" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/countryNameText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="@dimen/register_form_textview_default_width"
+                        android:layout_height="wrap_content"
+                        android:text="@string/countryName" />
+
+                    <Spinner
+                        android:id="@+id/countries_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </Spinner>
+
+                    <!--<EditText-->
+                    <!--android:id="@+id/countryEditText"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@drawable/edittext_form_style"-->
+                    <!--android:gravity="center"-->
+                    <!--android:hint="@string/countryNameHint" />-->
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#f10202" />
+            android:background="@color/divider" />
 
-        <LinearLayout
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_contact_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            card_view:cardCornerRadius="4dp">
 
-            <TextView
-                android:id="@+id/emailText"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/email"
-                style="@style/fontSizeRegisterFormStyle"/>
-
-            <EditText
-                android:id="@+id/emailEditText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edittext_form_style"
-                android:gravity="center"
-                android:hint="@string/emailHint"
-                style="@style/fontSizeRegisterFormStyle"/>
+                android:divider="@drawable/empty_divider"
+                android:orientation="vertical"
+                android:showDividers="middle"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact_information"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/card_headline_font_size"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/emailText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="@dimen/register_form_textview_default_width"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email" />
+
+                    <EditText
+                        android:id="@+id/emailEditText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_form_style"
+                        android:gravity="center"
+                        android:hint="@string/emailHint" />
 
 
-        </LinearLayout>
+                </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/phoneNumberText"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/phoneNumber"
-                style="@style/fontSizeRegisterFormStyle"/>
+                    <TextView
+                        android:id="@+id/phoneNumberText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="@dimen/register_form_textview_default_width"
+                        android:layout_height="wrap_content"
+                        android:text="@string/phoneNumber" />
 
-            <EditText
-                android:id="@+id/phoneNumberEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_form_style"
-                android:gravity="center"
-                android:hint="@string/phoneNumberHint"
-                style="@style/fontSizeRegisterFormStyle"/>
+                    <EditText
+                        android:id="@+id/phoneNumberEditText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_form_style"
+                        android:gravity="center"
+                        android:hint="@string/phoneNumberHint" />
 
-        </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#f10202" />
+            android:background="@color/divider" />
 
-        <LinearLayout
+
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_password_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            card_view:cardCornerRadius="4dp">
 
-            <TextView
-                android:id="@+id/passwordText"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/passwordText"
-                style="@style/fontSizeRegisterFormStyle"/>
-
-            <EditText
-                android:id="@+id/passwordEditText"
-                android:inputType="textPassword"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edittext_form_style"
-                android:gravity="center"
-                android:hint="@string/passwordHint"
-                style="@style/fontSizeRegisterFormStyle"/>
+                android:divider="@drawable/empty_divider"
+                android:orientation="vertical"
+                android:showDividers="middle"
+                android:padding="20dp">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password_setting"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/card_headline_font_size"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/confirmPasswordText"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/confirmPasswordText"
-                style="@style/fontSizeRegisterFormStyle"/>
+                    <TextView
+                        android:id="@+id/passwordText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="@dimen/register_form_textview_default_width"
+                        android:layout_height="wrap_content"
+                        android:text="@string/passwordText" />
 
-            <EditText
-                android:id="@+id/confirmPasswordEditText"
-                android:inputType="textPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_form_style"
-                android:gravity="center"
-                android:hint="@string/confirmPasswordHint"
-                style="@style/fontSizeRegisterFormStyle"/>
+                    <EditText
+                        android:id="@+id/passwordEditText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_form_style"
+                        android:gravity="center"
+                        android:hint="@string/passwordHint"
+                        android:inputType="textPassword" />
 
-        </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/confirmPasswordText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="@dimen/register_form_textview_default_width"
+                        android:layout_height="wrap_content"
+                        android:text="@string/confirmPasswordText" />
+
+                    <EditText
+                        android:id="@+id/confirmPasswordEditText"
+                        style="@style/fontSizeRegisterFormStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_form_style"
+                        android:gravity="center"
+                        android:hint="@string/confirmPasswordHint"
+                        android:inputType="textPassword" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#f10202" />
+            android:background="@color/divider" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -324,9 +443,9 @@
                 android:id="@+id/checkbox_newsletter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:onClick="onCheckboxClicked"
-                android:text="@string/registerToNewsletterCheckbox"
-                android:layout_gravity="center_vertical"/>
+                android:text="@string/registerToNewsletterCheckbox" />
 
             <Button
                 android:id="@+id/registerButton"
@@ -338,3 +457,4 @@
         </FrameLayout>
     </LinearLayout>
 </ScrollView>
+</LinearLayout>

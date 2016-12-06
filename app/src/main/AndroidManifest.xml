@@ -27,7 +27,8 @@
 
         <activity
             android:name=".RegisterForm"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/MyAppTheme"
+            android:label="@string/registerFormName">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

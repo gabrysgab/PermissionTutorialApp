@@ -30,4 +30,9 @@
     <string name="confirmPasswordHint">Powtórz hasło</string>
     <string name="registerToNewsletterCheckbox">Zapisz do newslettera</string>
     <string name="registerButtonText">Zarejestruj</string>
+    <string name="personal_information">Informacje osobowe</string>
+    <string name="address_information">Informacje adresowe</string>
+    <string name="contact_information">Informacje kontaktowe</string>
+    <string name="password_setting">Ustaw hasło</string>
+    <string name="registerFormName">Rejestracja</string>
 </resources>

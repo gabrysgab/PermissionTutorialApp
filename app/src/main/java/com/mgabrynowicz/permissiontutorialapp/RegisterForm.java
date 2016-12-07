@@ -73,11 +73,10 @@ public class RegisterForm extends AppCompatActivity {
 
         Spinner spinner = (Spinner) findViewById(R.id.countries_spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, countries);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
 
-        //TODO add countries spinner validation
-        //TODO add cities by localization
 
         formFields.addAll(Arrays.asList(userNameEditText, userSurnameEditText, streetNameEditText,
                 streetNumberEditText, cityNameEditText, postCodeEditText,

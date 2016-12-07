@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/fontSizeRegisterFormStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -10,247 +10,201 @@
     android:divider="@drawable/empty_divider"
     android:orientation="vertical"
     android:showDividers="middle">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_register_form"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.mgabrynowicz.permissiontutorialapp.RegisterForm">
+        app:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-
-    <LinearLayout
-        style="@style/fontSizeRegisterFormStyle"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_register_form"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:divider="@drawable/empty_divider"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:showDividers="middle">
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.mgabrynowicz.permissiontutorialapp.RegisterForm">
 
 
-
-        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view_name_info"
+        <LinearLayout
+            style="@style/fontSizeRegisterFormStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            card_view:cardCornerRadius="4dp">
+            android:layout_gravity="top"
+            android:divider="@drawable/empty_divider"
+            android:orientation="vertical"
+            android:showDividers="middle">
 
-            <LinearLayout
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_name_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:divider="@drawable/empty_divider"
-                android:orientation="vertical"
-                android:showDividers="middle"
-                android:padding="20dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/personal_information"
-                    android:gravity="center_horizontal"
-                    android:textSize="@dimen/card_headline_font_size"/>
-
+                card_view:cardCornerRadius="4dp">
 
                 <LinearLayout
-                    android:id="@+id/userNameLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:divider="@drawable/empty_divider"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:showDividers="middle">
 
                     <TextView
-                        android:id="@+id/userNameText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/userName" />
-
-                    <EditText
-                        android:id="@+id/userNameEditText"
-                        style="@style/fontSizeRegisterFormStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_form_style"
-                        android:gravity="center"
+                        android:gravity="center_horizontal"
+                        android:text="@string/personal_information"
+                        android:textSize="@dimen/card_headline_font_size" />
 
-                        android:hint="@string/userNameHint" />
-                </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/userSurnameLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/userSurnameText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="@dimen/register_form_textview_default_width"
-                        android:layout_height="wrap_content"
-                        android:text="@string/userSurname" />
-
-                    <EditText
-                        android:id="@+id/userSurnameEditText"
-                        style="@style/fontSizeRegisterFormStyle"
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_form_style"
-                        android:gravity="center"
-                        android:hint="@string/userSurnameHint" />
+                        app:counterEnabled="true"
+                        app:counterMaxLength="20">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/userNameEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/userNameHint"
+                            android:textSize="14sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/userSurnameLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:counterEnabled="true"
+                            app:counterMaxLength="20">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/userSurnameEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/userSurnameHint"
+                                android:textSize="14sp" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
+            </android.support.v7.widget.CardView>
 
-            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider" />
 
-        </android.support.v7.widget.CardView>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/divider" />
-
-        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view_address_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            card_view:cardCornerRadius="4dp">
-
-            <LinearLayout
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_address_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:divider="@drawable/empty_divider"
-                android:orientation="vertical"
-                android:showDividers="middle"
-                android:padding="20dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/address_information"
-                    android:gravity="center_horizontal"
-                    android:textSize="@dimen/card_headline_font_size"/>
+                card_view:cardCornerRadius="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:divider="@drawable/empty_divider"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:showDividers="middle">
 
                     <TextView
-                        android:id="@+id/cityNameText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="@dimen/register_form_textview_default_width"
-                        android:layout_height="wrap_content"
-                        android:text="@string/cityName" />
-
-                    <EditText
-                        android:id="@+id/cityNameEditText"
-                        style="@style/fontSizeRegisterFormStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_form_style"
-                        android:gravity="center"
-                        android:hint="@string/cityNameHint" />
+                        android:text="@string/address_information"
+                        android:textSize="@dimen/card_headline_font_size" />
 
-                </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/userAddressLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/streetNameText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="@dimen/register_form_textview_default_width"
-                        android:layout_height="wrap_content"
-                        android:text="@string/streetName" />
-
-                    <EditText
-                        android:id="@+id/streetNameEditText"
-                        style="@style/fontSizeRegisterFormStyle"
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_form_style"
-                        android:gravity="center"
-                        android:hint="@string/streetNameHint" />
+                        app:counterEnabled="true"
+                        app:counterMaxLength="20">
 
-                </LinearLayout>
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/cityNameEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/cityNameHint"
+                            android:textSize="14sp" />
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    </android.support.design.widget.TextInputLayout>
 
-                    <TextView
-                        android:id="@+id/streetNumberText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="@dimen/register_form_textview_default_width"
-                        android:layout_height="wrap_content"
-                        android:text="@string/streetNumber" />
 
-                    <EditText
-                        android:id="@+id/streetNumberEditText"
-                        style="@style/fontSizeRegisterFormStyle"
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_form_style"
-                        android:gravity="center"
-                        android:hint="@string/streetNumberHint" />
+                        app:counterEnabled="true"
+                        app:counterMaxLength="20">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/streetNameEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/streetNameHint"
+                            android:textSize="14sp" />
 
 
-                </LinearLayout>
+                    </android.support.design.widget.TextInputLayout>
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/postCodeNameText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="@dimen/register_form_textview_default_width"
-                        android:layout_height="wrap_content"
-                        android:text="@string/postCode" />
-
-                    <EditText
-                        android:id="@+id/postCodeEditText"
-                        style="@style/fontSizeRegisterFormStyle"
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_form_style"
-                        android:gravity="center"
-                        android:hint="@string/postCodeHint" />
-                </LinearLayout>
+                        app:counterEnabled="true"
+                        app:counterMaxLength="20">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/streetNumberEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/streetNumberHint"
+                            android:textSize="14sp" />
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    </android.support.design.widget.TextInputLayout>
 
-                    <TextView
-                        android:id="@+id/countryNameText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="@dimen/register_form_textview_default_width"
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/countryName" />
+                        app:counterEnabled="true"
+                        app:counterMaxLength="20">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/postCodeEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/postCodeHint"
+                            android:textSize="14sp" />
+
+
+                    </android.support.design.widget.TextInputLayout>
+
 
                     <Spinner
                         android:id="@+id/countries_spinner"
@@ -270,191 +224,169 @@
 
 
                 </LinearLayout>
-            </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/divider" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider" />
 
-        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view_contact_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            card_view:cardCornerRadius="4dp">
-
-            <LinearLayout
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_contact_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:divider="@drawable/empty_divider"
-                android:orientation="vertical"
-                android:showDividers="middle"
-                android:padding="20dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/contact_information"
-                    android:gravity="center_horizontal"
-                    android:textSize="@dimen/card_headline_font_size"/>
+                card_view:cardCornerRadius="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:divider="@drawable/empty_divider"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:showDividers="middle">
 
                     <TextView
-                        android:id="@+id/emailText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="@dimen/register_form_textview_default_width"
-                        android:layout_height="wrap_content"
-                        android:text="@string/email" />
-
-                    <EditText
-                        android:id="@+id/emailEditText"
-                        style="@style/fontSizeRegisterFormStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_form_style"
-                        android:gravity="center"
-                        android:hint="@string/emailHint" />
+                        android:gravity="center_horizontal"
+                        android:text="@string/contact_information"
+                        android:textSize="@dimen/card_headline_font_size" />
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="20">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/emailEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/emailHint"
+                            android:textSize="14sp" />
+
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="20">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/phoneNumberEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/phoneNumberHint"
+                            android:textSize="14sp" />
+
+
+                    </android.support.design.widget.TextInputLayout>
 
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+            </android.support.v7.widget.CardView>
 
-                    <TextView
-                        android:id="@+id/phoneNumberText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="@dimen/register_form_textview_default_width"
-                        android:layout_height="wrap_content"
-                        android:text="@string/phoneNumber" />
-
-                    <EditText
-                        android:id="@+id/phoneNumberEditText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_form_style"
-                        android:gravity="center"
-                        android:hint="@string/phoneNumberHint" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/divider" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider" />
 
 
-        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view_password_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            card_view:cardCornerRadius="4dp">
-
-            <LinearLayout
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_password_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:divider="@drawable/empty_divider"
-                android:orientation="vertical"
-                android:showDividers="middle"
-                android:padding="20dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/password_setting"
-                    android:gravity="center_horizontal"
-                    android:textSize="@dimen/card_headline_font_size"/>
+                card_view:cardCornerRadius="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:divider="@drawable/empty_divider"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:showDividers="middle">
 
                     <TextView
-                        android:id="@+id/passwordText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="@dimen/register_form_textview_default_width"
-                        android:layout_height="wrap_content"
-                        android:text="@string/passwordText" />
-
-                    <EditText
-                        android:id="@+id/passwordEditText"
-                        style="@style/fontSizeRegisterFormStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_form_style"
-                        android:gravity="center"
-                        android:hint="@string/passwordHint"
-                        android:inputType="textPassword" />
+                        android:text="@string/password_setting"
+                        android:textSize="@dimen/card_headline_font_size" />
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="20">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/passwordEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/passwordHint"
+                            android:textSize="14sp"
+                            android:inputType="textPassword"/>
+
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="20">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/confirmPasswordEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/confirmPasswordHint"
+                            android:textSize="14sp"
+                            android:inputType="textPassword"/>
+
+
+                    </android.support.design.widget.TextInputLayout>
+
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+            </android.support.v7.widget.CardView>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkbox_newsletter"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_gravity="center_vertical"
+                    android:onClick="onCheckboxClicked"
+                    android:text="@string/registerToNewsletterCheckbox" />
 
-                    <TextView
-                        android:id="@+id/confirmPasswordText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="@dimen/register_form_textview_default_width"
-                        android:layout_height="wrap_content"
-                        android:text="@string/confirmPasswordText" />
+                <Button
+                    android:id="@+id/registerButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="@string/registerButtonText" />
 
-                    <EditText
-                        android:id="@+id/confirmPasswordEditText"
-                        style="@style/fontSizeRegisterFormStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_form_style"
-                        android:gravity="center"
-                        android:hint="@string/confirmPasswordHint"
-                        android:inputType="textPassword" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/divider" />
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkbox_newsletter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:onClick="onCheckboxClicked"
-                android:text="@string/registerToNewsletterCheckbox" />
-
-            <Button
-                android:id="@+id/registerButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="@string/registerButtonText" />
-
-        </FrameLayout>
-    </LinearLayout>
-</ScrollView>
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -35,4 +35,6 @@
     <string name="password_setting">Set a password</string>
     <string name="registerFormName">Sign-up</string>
     <string name="welcome_text">Welcome!</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid...</string>
+    <string name="about_the_app_title">About the app</string>
 </resources>

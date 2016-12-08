@@ -35,4 +35,5 @@
     <string name="contact_information">Informacje kontaktowe</string>
     <string name="password_setting">Ustaw hasło</string>
     <string name="registerFormName">Rejestracja</string>
+    <string name="welcome_text">Witajcie!</string>
 </resources>
